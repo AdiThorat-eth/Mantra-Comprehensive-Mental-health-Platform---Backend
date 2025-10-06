@@ -48,3 +48,9 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+razorpay:
+      key:
+        id: ${RAZORPAY_KEY_ID}
+      secret:
+        key: ${RAZORPAY_SECRET_KEY}
