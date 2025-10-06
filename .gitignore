@@ -1,6 +1,18 @@
-/target
-/.idea
+# Environment variables - CRITICAL to ignore
+.env
+
+# Java/Maven build artifacts
+/target/
+*.jar
+*.war
+
+# IDE files (IntelliJ)
+/.idea/
 *.iml
+
+# Environment-specific properties (Good practice to ignore)
 application-dev.yml
 application-prod.yml
-.env
+
+# Node.js dependencies (From remote)
+node_modules
