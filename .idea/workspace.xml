@@ -4,46 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79fba967-286e-4ba1-91af-d8401c984f04" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/project/.bolt/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/com/mantra/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/com/mantra/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/admin/dto/AdminStatsDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/admin/dto/AdminStatsDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/AuthResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/RegisterRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/services/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/services/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/services/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/auth/services/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/controllers/ChatbotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/controllers/ChatbotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/dto/ChatRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/dto/ChatRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/dto/ChatResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/dto/ChatResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/entities/ChatMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/entities/ChatMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/services/ChatbotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/chatbot/services/ChatbotService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/community/dto/PostDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/community/dto/PostDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/community/dto/ReplyDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/community/dto/ReplyDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/community/entities/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/community/entities/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/community/entities/Reply.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/community/entities/Reply.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/community/services/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/community/services/CommunityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/dto/ContactMessageDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/dto/ContactMessageDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/entities/ContactMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/entities/ContactMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/services/ContactService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/contact/services/ContactService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/dto/MeditationDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/dto/MeditationDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/entities/Meditation.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/entities/Meditation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/services/MeditationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/meditation/services/MeditationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/shared/dto/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/shared/dto/ApiResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/shared/exceptions/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/shared/exceptions/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/dto/BookingDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/dto/BookingDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/dto/TherapistDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/dto/TherapistDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/entities/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/entities/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/entities/Therapist.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/entities/Therapist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/services/TherapyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/therapy/services/TherapyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/classes/com/mantra/utils/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/classes/com/mantra/utils/JwtUtils.class" afterDir="false" />
+    <list default="true" id="b4cddced-0f64-4f3d-99d3-ab681ebec868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,36 +17,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SanketLohar"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SanketLohar&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AdiThorat-eth/Mantra-Comprehensive-Mental-health-Platform---BACKEND.git",
-    "accountId": "85fc4078-3050-46ba-8759-89462a2afc3d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AdiThorat-eth/Mantra-Comprehensive-Mental-health-Platform---BACKEND.git&quot;,
+    &quot;accountId&quot;: &quot;85fc4078-3050-46ba-8759-89462a2afc3d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="341BNLQRsh4TGNAk97m42yHQ3N2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MantraApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Mantra New/project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MantraApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Mantra New/project&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Mantra New" />
