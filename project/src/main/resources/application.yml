@@ -1,40 +1,48 @@
+# ===================================================================
+# DEFAULT/LOCAL PROFILE (for running on your machine)
+# ===================================================================
 server:
   port: 8080
 
 spring:
   application:
     name: mantra-backend
-
+  # --- Local MySQL Database ---
   datasource:
     url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: 699123s@
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: true # Good for local debugging
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: true
-
+        format_sql: true # Good for local debugging
   security:
     user:
-      password: admin
+      password: admin # Default password for local development
 
 # JWT Configuration
 jwt:
+  # IMPORTANT: For local dev, this is okay. For production, this will be overridden.
   secret: qn+w2iYtsaOZgVWeArJCIsmJVTRiJrvXfjPwlGI8SkVPe+tPY9wvim+u80EWLNMec+9IWu+wiBu3Qsujn8Reew==
   expiration: 86400000 # 24 hours
 
-# OpenRouter API Configuration (DeepSeek R1 Distill Llama)
+# OpenRouter API Configuration (uses environment variable)
 openrouter:
   api:
-    key: ${OPENROUTER_API_KEY:}
+    key: ${OPENROUTER_API_KEY}
     url: https://openrouter.ai/api/v1/chat/completions
 
+# Razorpay Configuration (uses environment variables)
+razorpay:
+  key:
+    id: ${RAZORPAY_KEY_ID}
+  secret:
+    key: ${RAZORPAY_SECRET_KEY}
 
 # Logging
 logging:
@@ -49,8 +57,46 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-razorpay:
-      key:
-        id: ${RAZORPAY_KEY_ID}
-      secret:
-        key: ${RAZORPAY_SECRET_KEY}
+---
+
+# ===================================================================
+# PRODUCTION PROFILE (for Render deployment)
+# This section will ONLY be active when the 'production' profile is set.
+# ===================================================================
+spring:
+  config:
+    activate:
+      on-profile: production
+
+  # --- Render PostgreSQL Database Configuration ---
+  datasource:
+    # This URL will be provided by Render as a single environment variable
+    url: ${SPRING_DATASOURCE_URL}
+    # No username/password needed here; they are in the URL
+
+  jpa:
+    hibernate:
+      ddl-auto: update # You might change this to 'validate' in mature production
+    show-sql: false # Turn off verbose SQL logging in production
+    properties:
+      hibernate:
+        # Use the PostgreSQL dialect for Render's database
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false # Turn off SQL formatting in production
+
+  security:
+    user:
+      # Load the admin password from an environment variable
+      password: ${DEFAULT_ADMIN_PASSWORD}
+
+# JWT Configuration for Production
+jwt:
+  # Load the secret from a secure environment variable
+  secret: ${JWT_SECRET}
+
+# Logging for Production
+logging:
+  level:
+    com.mantra: INFO # Use INFO level for production to reduce log noise
+    org.springframework: INFO
+    org.hibernate: INFO
