@@ -22,7 +22,7 @@ public class JwtUtils {
     private String secretKey;
 
     @Value("${jwt.expiration}")
-    private long jwtExpiration; // in milliseconds
+    private long jwtExpiration;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -64,14 +64,14 @@ public class JwtUtils {
         return extractClaim(token, Claims::getExpiration);
     }
 
+    // ✅ Correct for JJWT 0.11.x
     private Claims extractAllClaims(String token) {
-        return Jwts.parserBuilder()   // ✅ use parserBuilder()
+        return Jwts.parserBuilder()
                 .setSigningKey(getSignInKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
     }
-
 
     private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);

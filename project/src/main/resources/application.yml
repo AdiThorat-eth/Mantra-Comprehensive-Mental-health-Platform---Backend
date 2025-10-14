@@ -12,7 +12,7 @@ spring:
     url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: 699123s@
-    
+
   jpa:
     hibernate:
       ddl-auto: update
