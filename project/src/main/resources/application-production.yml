@@ -17,6 +17,8 @@ spring:
 # Your other production-specific settings
 jwt:
   secret: ${JWT_SECRET}
+  expiration: 86400000 # 24 hours
+
 
 security:
   user:
