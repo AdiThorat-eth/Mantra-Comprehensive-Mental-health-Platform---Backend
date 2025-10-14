@@ -70,11 +70,10 @@ spring:
 
   # --- Render PostgreSQL Database Configuration ---
   datasource:
-    # This URL will be provided by Render as a single environment variable
-    url: ${SPRING_DATASOURCE_URL}
-    # No username/password needed here; they are in the URL
-
-  jpa:
+    # Use the DATABASE_URL from Railway, but add the required "jdbc:" prefix
+    url: jdbc:${DATABASE_URL}
+    
+    jpa:
     hibernate:
       ddl-auto: update # You might change this to 'validate' in mature production
     show-sql: false # Turn off verbose SQL logging in production
