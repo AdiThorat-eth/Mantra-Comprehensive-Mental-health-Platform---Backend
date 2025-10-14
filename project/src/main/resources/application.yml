@@ -12,7 +12,6 @@ spring:
     url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password: 699123s@
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -60,7 +59,7 @@ springdoc:
 ---
 
 # ===================================================================
-# PRODUCTION PROFILE (for Render deployment)
+# PRODUCTION PROFILE (for Railway/Render deployment)
 # This section will ONLY be active when the 'production' profile is set.
 # ===================================================================
 spring:
@@ -68,18 +67,19 @@ spring:
     activate:
       on-profile: production
 
-  # --- Render PostgreSQL Database Configuration ---
+  # --- PostgreSQL Database Configuration ---
   datasource:
-    # Use the DATABASE_URL from Railway, but add the required "jdbc:" prefix
+    # This URL is provided by the deployment platform (e.g., Railway's DATABASE_URL)
     url: jdbc:${DATABASE_URL}
-    
-    jpa:
+
+  # --- JPA Configuration (CORRECTED INDENTATION) ---
+  jpa:
     hibernate:
       ddl-auto: update # You might change this to 'validate' in mature production
     show-sql: false # Turn off verbose SQL logging in production
     properties:
       hibernate:
-        # Use the PostgreSQL dialect for Render's database
+        # Use the PostgreSQL dialect for the database
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false # Turn off SQL formatting in production
 
