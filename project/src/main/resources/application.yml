@@ -62,24 +62,27 @@ springdoc:
 # PRODUCTION PROFILE (for Railway/Render deployment)
 # This section will ONLY be active when the 'production' profile is set.
 # ===================================================================
+# ===================================================================
+# PRODUCTION PROFILE (for Railway deployment)
+# This section will ONLY be active when the 'production' profile is set.
+# ===================================================================
 spring:
   config:
     activate:
       on-profile: production
 
-  # --- PostgreSQL Database Configuration ---
+  # --- Railway PostgreSQL Database Configuration (Corrected) ---
   datasource:
-    # This URL is provided by the deployment platform (e.g., Railway's DATABASE_URL)
-    url: jdbc:${DATABASE_URL}
+    # Manually construct the URL from the specific Railway variables
+    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
 
-  # --- JPA Configuration (CORRECTED INDENTATION) ---
   jpa:
     hibernate:
-      ddl-auto: update # You might change this to 'validate' in mature production
-    show-sql: false # Turn off verbose SQL logging in production
+      ddl-auto: update
     properties:
       hibernate:
-        # Use the PostgreSQL dialect for the database
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false # Turn off SQL formatting in production
 
