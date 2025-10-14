@@ -1,6 +1,5 @@
-# ===================================================================
-# DEFAULT/LOCAL PROFILE (for running on your machine)
-# ===================================================================
+# This file is for LOCAL development only
+
 server:
   port: 8080
 
@@ -9,96 +8,13 @@ spring:
     name: mantra-backend
   # --- Local MySQL Database ---
   datasource:
-    url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/mantra_db
     username: root
-    password: 699123s@
+    password: your_local_password # Change if needed
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true # Good for local debugging
+    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: true # Good for local debugging
-  security:
-    user:
-      password: admin # Default password for local development
-
-# JWT Configuration
-jwt:
-  # IMPORTANT: For local dev, this is okay. For production, this will be overridden.
-  secret: qn+w2iYtsaOZgVWeArJCIsmJVTRiJrvXfjPwlGI8SkVPe+tPY9wvim+u80EWLNMec+9IWu+wiBu3Qsujn8Reew==
-  expiration: 86400000 # 24 hours
-
-# OpenRouter API Configuration (uses environment variable)
-openrouter:
-  api:
-    key: ${OPENROUTER_API_KEY}
-    url: https://openrouter.ai/api/v1/chat/completions
-
-# Razorpay Configuration (uses environment variables)
-razorpay:
-  key:
-    id: ${RAZORPAY_KEY_ID}
-  secret:
-    key: ${RAZORPAY_SECRET_KEY}
-
-# Logging
-logging:
-  level:
-    com.mantra: DEBUG
-    org.springframework.security: DEBUG
-
-# Swagger
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-
----
-
-# ===================================================================
-# PRODUCTION PROFILE (for Railway/Render deployment)
-# This section will ONLY be active when the 'production' profile is set.
-# ===================================================================
-# ===================================================================
-# PRODUCTION PROFILE (for Railway deployment)
-# This section will ONLY be active when the 'production' profile is set.
-# ===================================================================
-spring:
-  config:
-    activate:
-      on-profile: production
-
-  # --- Railway PostgreSQL Database Configuration (Corrected) ---
-  datasource:
-    # Manually construct the URL from the specific Railway variables
-    url: jdbc:postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}
-    username: ${PGUSER}
-    password: ${PGPASSWORD}
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: false # Turn off SQL formatting in production
-
-  security:
-    user:
-      # Load the admin password from an environment variable
-      password: ${DEFAULT_ADMIN_PASSWORD}
-
-# JWT Configuration for Production
-jwt:
-  # Load the secret from a secure environment variable
-  secret: ${JWT_SECRET}
-
-# Logging for Production
-logging:
-  level:
-    com.mantra: INFO # Use INFO level for production to reduce log noise
-    org.springframework: INFO
-    org.hibernate: INFO
