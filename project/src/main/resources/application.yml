@@ -1,5 +1,6 @@
-# This file is for LOCAL development only
-
+# ===================================================================
+# DEFAULT/LOCAL PROFILE (for running on your machine)
+# ===================================================================
 server:
   port: 8080
 
@@ -8,13 +9,43 @@ spring:
     name: mantra-backend
   # --- Local MySQL Database ---
   datasource:
-    url: jdbc:mysql://localhost:3306/mantra_db
+    url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
-    password: your_local_password # Change if needed
+    password: 699123s@
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+
+---
+
+# ===================================================================
+# PRODUCTION PROFILE (for Render deployment)
+# ===================================================================
+spring:
+  config:
+    activate:
+      on-profile: production
+
+  # --- Render PostgreSQL Database Configuration ---
+  datasource:
+    # This reads the single, complete URL from the Render environment variable
+    url: ${SPRING_DATASOURCE_URL}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Your other production-specific settings
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000
+
+security:
+  user:
+    password: ${DEFAULT_ADMIN_PASSWORD}
