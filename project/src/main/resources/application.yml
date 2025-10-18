@@ -1,5 +1,5 @@
 # ===================================================================
-# DEFAULT/LOCAL PROFILE (for running on your machine)
+# DEFAULT / LOCAL PROFILE  (for running on your machine)
 # ===================================================================
 server:
   port: 8080
@@ -7,6 +7,7 @@ server:
 spring:
   application:
     name: mantra-backend
+
   # --- Local MySQL Database ---
   datasource:
     url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
@@ -19,20 +20,21 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 
----
-
 # ===================================================================
 # PRODUCTION PROFILE (for Render deployment)
 # ===================================================================
+---
 spring:
   config:
     activate:
       on-profile: production
 
-  # --- Render PostgreSQL Database Configuration ---
+  # --- PostgreSQL Database Configuration (Render) ---
   datasource:
-    # This reads the single, complete URL from the Render environment variable
     url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -40,8 +42,15 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: ${SPRING_JPA_SHOW_SQL:false}
+        format_sql: true
 
-# Your other production-specific settings
+server:
+  port: ${PORT:8080}
+
+# ===================================================================
+# JWT + Security
+# ===================================================================
 jwt:
   secret: ${JWT_SECRET}
   expiration: 86400000
@@ -49,3 +58,24 @@ jwt:
 security:
   user:
     password: ${DEFAULT_ADMIN_PASSWORD}
+
+# ===================================================================
+# External Service Integrations
+# ===================================================================
+openrouter:
+  api:
+    key: ${OPENROUTER_API_KEY}
+
+razorpay:
+  key:
+    id: ${RAZORPAY_KEY_ID}
+    secret: ${RAZORPAY_SECRET_KEY}
+
+# ===================================================================
+# Logging / Debug
+# ===================================================================
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    com.zaxxer.hikari: INFO
