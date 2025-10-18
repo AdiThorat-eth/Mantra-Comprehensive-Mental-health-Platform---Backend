@@ -1,35 +1,14 @@
-# ===================================================================
-# DEFAULT / LOCAL PROFILE  (for running on your machine)
-# ===================================================================
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: mantra-backend
 
-  # --- Local MySQL Database ---
-  datasource:
-    url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password: 699123s@
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-
-# ===================================================================
-# PRODUCTION PROFILE (for Render deployment)
-# ===================================================================
----
-spring:
   config:
     activate:
-      on-profile: production
+      on-profile: ${SPRING_PROFILES_ACTIVE:production}
 
-  # --- PostgreSQL Database Configuration (Render) ---
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
@@ -43,14 +22,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         show_sql: ${SPRING_JPA_SHOW_SQL:false}
-        format_sql: true
 
-server:
-  port: ${PORT:8080}
-
-# ===================================================================
-# JWT + Security
-# ===================================================================
 jwt:
   secret: ${JWT_SECRET}
   expiration: 86400000
@@ -59,9 +31,6 @@ security:
   user:
     password: ${DEFAULT_ADMIN_PASSWORD}
 
-# ===================================================================
-# External Service Integrations
-# ===================================================================
 openrouter:
   api:
     key: ${OPENROUTER_API_KEY}
@@ -71,9 +40,6 @@ razorpay:
     id: ${RAZORPAY_KEY_ID}
     secret: ${RAZORPAY_SECRET_KEY}
 
-# ===================================================================
-# Logging / Debug
-# ===================================================================
 logging:
   level:
     org.springframework: INFO
