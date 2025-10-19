@@ -1,56 +1,49 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: mantra-backend
 
+  config:
+    activate:
+      on-profile: ${SPRING_PROFILES_ACTIVE:production}
+
   datasource:
-    url: jdbc:mysql://localhost:3306/mantra_db?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password: 699123s@
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: ${SPRING_JPA_SHOW_SQL:false}
 
-  security:
-    user:
-      password: admin
-
-# JWT Configuration
 jwt:
-  secret: qn+w2iYtsaOZgVWeArJCIsmJVTRiJrvXfjPwlGI8SkVPe+tPY9wvim+u80EWLNMec+9IWu+wiBu3Qsujn8Reew==
-  expiration: 86400000 # 24 hours
+  secret: ${JWT_SECRET}
+  expiration: 86400000
 
-# OpenRouter API Configuration (DeepSeek R1 Distill Llama)
+security:
+  user:
+    password: ${DEFAULT_ADMIN_PASSWORD}
+
 openrouter:
   api:
-    key: ${OPENROUTER_API_KEY:}
+    key: ${OPENROUTER_API_KEY}
     url: https://openrouter.ai/api/v1/chat/completions
 
 
-# Logging
+razorpay:
+  key:
+    id: ${RAZORPAY_KEY_ID}
+    secret: ${RAZORPAY_SECRET_KEY}
+
 logging:
   level:
-    com.mantra: DEBUG
-    org.springframework.security: DEBUG
-
-# Swagger
-springdoc:
-  api-docs:
-    path: /api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-
-razorpay:
-      key:
-        id: ${RAZORPAY_KEY_ID}
-      secret:
-        key: ${RAZORPAY_SECRET_KEY}
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    com.zaxxer.hikari: INFO
